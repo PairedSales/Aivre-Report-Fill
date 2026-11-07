@@ -20,11 +20,11 @@ Never stop to wait for the appraiser's answers. Make the reasonable call, enter 
 - Aivre allows one editor at a time. If the page says "This order is being edited somewhere else", close your tab and ask the appraiser to close their copy of the report, then reopen.
 - Read the subject column of the grid first (GLA, beds/baths, floor, Q/C, structure design, garage, PUD). If a subject value is wrong (the appraiser corrects it), fix it in the subject's own section first (e.g. Dwelling - Building 1 for Structure Design), then copy it to the comps.
 - Check the engagement letter for comparable requirements and flag any the TSV does not meet. Class Valuation: at least three closed sales and two listings or pendings (or an explanation), MLS photo use disclosed, and a location map showing the subject and every comp including listings.
-- Files to upload go in Scratch/<slug>/uploads/, or attach workfile originals by absolute path.
+- Files to upload go in Scratch/<slug>/uploads/, or attach workfile originals.
 
 ## 1. TSV import (the one Aivre AI step)
 1. Sales Comparison Approach page. Click the arrow on "Add Comparable", choose "Import from CSV/TSV". Do not add comps manually.
-2. Attach the TSV by absolute path with DOM.setFileInputFiles on the dialog's real input[type=file] (there may be two matches; use the one that is not the drop-zone button).
+2. Attach the TSV (see Uploads in chatgpt-runtime.md) on the dialog's real input[type=file] (there may be two matches; use the one that is not the drop-zone button).
 3. Appraiser context box, for example: "Import all rows in this order: <addresses>. All in <project>, same project as subject. LMT column = days on market. Sold Pr = sale price, Closed Date = sale date, Contract Date = contract date, List Price = list price. ASF = finished above grade sq ft. Unit Fl No = floor number. FIN = financing type. Do not enter any adjustments."
 4. Analyze CSV/TSV, wait (about 30-60 seconds), read the extraction matrix, then Apply Fields.
 5. Check every imported value against the TSV by hand: list price, sale price, contract date, sale date, DOM (= LMT), GLA (ASF), beds, baths, MLS #. Fix anything that differs. Clear any adjustment or Q/C value the import filled. Read input values with JS by row label and column x position; get_page_text does not show input values.

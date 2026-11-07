@@ -7,7 +7,7 @@ Nothing is installed and nothing needs pasting. You extract the folder, make a C
 ## What you need
 
 - The ChatGPT desktop app with Browser Use and Chrome connected.
-- **Full CDP access turned on.** In ChatGPT settings, open the Developer mode section and turn on **Enable full CDP access**. ChatGPT marks it Elevated risk because it gives ChatGPT full control of the connected browser. These workflows need it to run their page helpers and to attach your photos and exhibits to Aivre. Without it ChatGPT will stop and tell you to turn it on.
+- **Full CDP access turned on.** In ChatGPT settings, open the Developer mode section and turn on **Enable full CDP access**. ChatGPT marks it Elevated risk because it gives ChatGPT full control of the connected browser. These workflows need it to run their page helpers in Aivre and to attach your photos and exhibits. If ChatGPT's browser tool blocks its direct file-upload command, the workflows upload through JavaScript instead.
 - An Aivre account, signed in to https://www.aivre.com in that Chrome.
 - Optional: the Gmail connector, so ChatGPT can read AMC order emails (read only).
 
