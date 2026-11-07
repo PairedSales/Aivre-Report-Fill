@@ -42,7 +42,7 @@ Never use `Runtime.evaluate` to call Aivre's hidden APIs or to change data outsi
 | The workflow says | Do this |
 |---|---|
 | scratchpad | `Scratch/<address-slug>/`. Create it when the assignment starts. |
-| the workfile, the workfile folder | `Workfiles/<address-slug>/` (see AGENTS.md section 2). |
+| the workfile, the workfile folder | The folder the appraiser provided with the request (see AGENTS.md section 2). |
 | "load the X skill with the Skill tool" | Read `workflows/X.md`. |
 | `pdftotext -layout`, `pdftoppm`, image compression, contact sheets | Use the local tools available to you (Poppler, Python with Pillow, PyMuPDF or pypdf). If a tool is missing, use another that does the same job. Tell the appraiser only if nothing works. |
 | Gmail search for AMC order emails | If a Gmail connector is connected in ChatGPT, search it read only by address and order number. Otherwise use what the workfile has and list the missing order details in the summary. Never send, reply, forward or delete email. |

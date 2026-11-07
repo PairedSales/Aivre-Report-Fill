@@ -28,8 +28,8 @@ The modules use this skill's section names. In each section apply the core lines
 When a rule changes, put it where it applies: here if it applies to every report, otherwise in that one module. Never copy a core rule into a module.
 
 ## Where things are
-- Workfile: the address's workfile folder, named for the address with dashes (the slug, e.g. 123-Main-St-Anytown-IL-60000).
-  - Location: Workfiles/<slug>/ in the Aivre-Report-Fill folder. If a file the task needs is not there, look in Downloads (AGENTS.md section 2).
+- Workfile: the address's workfile folder. <slug> in these files is the address with dashes (e.g. 123-Main-St-Anytown-IL-60000), used for Scratch folder and file names.
+  - Location: the folder the appraiser provides with the request (a path, or a folder already in the project). If a file the task needs is not there, look in Downloads (AGENTS.md section 2).
   - The folder holds:
     - order documents (engagement letter or AMC order page, lender requirements); ErrorLog.txt from the nightly fetch (county, PIN, what was captured, and notes such as county conflicts and street spelling)
     - the public record (tax page), plat map, zoning and flood map captures, and sometimes a survey or seller update list. Will County has no tax page from the nightly fetch; the appraiser adds the Will County CCAO parcel page (property-card-<slug>.png: owner, subdivision, legal description, last sale and document number).
