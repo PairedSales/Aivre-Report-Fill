@@ -20,14 +20,15 @@ Also needed: Chrome connected to Browser Use, with the appraiser signed in to ht
 
 ## 2. Folders
 
-All Aivre work happens in this folder (the one holding this AGENTS.md):
+All Aivre work happens in this project. This folder (the one holding this AGENTS.md) has:
 
 - `workflows/`: the workflow files.
 - `appraiser-profile.md`: the appraiser's details and defaults.
-- `Workfiles/<address-slug>/`: one folder per property, named for the address with dashes (e.g. `Workfiles/123-Main-St-Anytown-IL-60000`). The appraiser puts the order documents, public record, photos, sketch, MLS exports and so on here. This is "the workfile" in every workflow.
-- `Scratch/<address-slug>/`: your working copies, crops, compressed photos, photo log and notes. Files to upload to Aivre go in `Scratch/<address-slug>/uploads/` and are attached by absolute path. Create these folders when an assignment starts.
+- `Scratch/<address-slug>/`: your working copies, crops, compressed photos, photo log and notes, one folder per property named for the address with dashes (e.g. `Scratch/123-Main-St-Anytown-IL-60000`). Files to upload to Aivre go in `Scratch/<address-slug>/uploads/` and are attached by absolute path. Create these folders when an assignment starts.
 
-The Downloads folder is also available to you, just in case. If a file the appraiser mentions (a TSV export, a contract, photos) is not in the workfile, look for it in Downloads and use it from there. Do not move or delete anything in Downloads. If there is no workfile folder for the address yet and the files are in Downloads, create `Workfiles/<address-slug>/` and copy them in.
+**The workfile** is the property's folder of order documents, public record, photos, sketch, MLS exports and so on. The appraiser always provides it with the request: a path, or a reference to a folder already in the project. Use what they point to. "The workfile" in every workflow means that folder.
+
+The Downloads folder is also available, just in case. If a file the task needs (a TSV export, a contract, photos) is not in the workfile, look for it in Downloads and use it from there. Do not move or delete anything in Downloads.
 
 Treat every file in the workfile as read only. The only files you may add there are a generated `Sketch.png` or a compressed `Purchase Contract.pdf` when a workflow calls for them. Never overwrite an original.
 

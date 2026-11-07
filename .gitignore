@@ -1,5 +1,3 @@
-# Client files never belong in the repo.
-Workfiles/*
-!Workfiles/README.md
+# ChatGPT's working copies of client files never belong in the repo.
 Scratch/*
 !Scratch/README.md

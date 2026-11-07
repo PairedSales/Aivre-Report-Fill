@@ -2,7 +2,7 @@
 
 Workflows that let ChatGPT fill an Aivre URAR (UAD 3.6) appraisal report by hand from your workfile: order documents, public record, photos, sketch and MLS exports. It works in your own Chrome, enters each field directly, and leaves every appraisal judgment (adjustments, weights, value, reconciliation, comp ratings) to you. It never signs, submits or delivers a report.
 
-Nothing is installed and nothing needs pasting. You extract the folder, make a ChatGPT project for it, and do all your Aivre report filling in that project. Your workfiles live in the same folder. ChatGPT finds `AGENTS.md` and the workflows on its own.
+Nothing is installed and nothing needs pasting. You extract the folder, make a ChatGPT project for it, and do all your Aivre report filling in that project. ChatGPT finds `AGENTS.md` and the workflows on its own.
 
 ## What you need
 
@@ -27,13 +27,12 @@ Aivre-Report-Fill/
   AGENTS.md              ChatGPT's instructions
   appraiser-profile.md   your details and defaults
   workflows/             the report-fill workflows
-  Workfiles/             one folder per property (you add these)
   Scratch/               ChatGPT's working copies
 ```
 
 ## Workfiles
 
-Put each assignment's files in `Workfiles`, in a folder named for the address with dashes, e.g. `Workfiles\123-Main-St-Anytown-IL-60000`. Useful contents: the engagement letter and lender requirements, the tax/public record page, plat, zoning and flood map captures, the county legal description image, inspection photos, your sketch (`Sketch.png`), the purchase contract, a connectMLS TSV of sales and listings, and market graphs. ChatGPT reads what is there and lists what is missing. If something is still in Downloads, it finds it there.
+Give ChatGPT the property's workfile with each request: a path, or a folder that is already in the project. Useful contents: the engagement letter and lender requirements, the tax/public record page, plat, zoning and flood map captures, the county legal description image, inspection photos, your sketch (`Sketch.png`), the purchase contract, a connectMLS TSV of sales and listings, and market graphs. ChatGPT reads what is there and lists what is missing. If something is still in Downloads, it finds it there.
 
 ChatGPT never changes your originals. Its copies, crops and notes go in `Scratch`.
 
@@ -41,10 +40,10 @@ Create the blank report in Aivre first. ChatGPT opens the existing report for th
 
 ## Example requests
 
-- Fill the Aivre report for 123 Main St, Anytown IL. Condition C4, no deferred maintenance.
+- Fill the Aivre report for 123 Main St, Anytown IL. Workfile is `D:\Appraisals\123 Main St`. Condition C4, no deferred maintenance.
 - Fill only the Sales Contract section for 123 Main St from the purchase contract in the workfile.
 - Do the Sales Comparison grid for 123 Main St from the TSV in the workfile.
-- Do the rental comps for 456 Oak Ave, it's a 2-flat.
+- Do the rental comps for 456 Oak Ave, it's a 2-flat. Files are in the 456 Oak folder.
 
 At the end ChatGPT gives a short summary: items to check first, what it filled and from where, conflicts between sources, judgment calls for you to confirm, sections still red and why, and documents or photos to request.
 
