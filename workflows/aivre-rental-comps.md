@@ -23,7 +23,7 @@ Match each comp photo to its listing by rendering the top of each listing's firs
 Aivre's Comparable Rental Analysis can only select comps from this list, so every unit comp is entered here first. Click "Add Comparable Unit" once per comp. Per comp column:
 - Property Address: click the cell, type the street in Street Address, wait about 2 seconds and pick the Chicago autocomplete suggestion (it fills City, State and ZIP), then type the Unit # in its own field. Check State is filled: with State blank the address never geocodes (Geospatial stays "Select"). Fix it in the popover's State listbox (click its search box, type IL, click IL).
 - Geospatial Information: fills itself once the address is complete. Confirm it on the Rental Comparable Map (Step 4); never take it from county GIS or the MLS.
-- Photo: the front photo. Find the file inputs in the Comparable Rental Properties grid photo cells and attach it to that comp's input with DOM.setFileInputFiles.
+- Photo: the front photo. Find the file inputs in the Comparable Rental Properties grid photo cells and attach it to that comp's input (see Uploads in chatgpt-runtime.md).
 - Structure Type: Dwelling (for a unit in a building; Outbuilding only for a coach house unit).
 - Lease Start Date (MM/YYYY): the month the lease began = the later of Rented Date and Available As Of. When the remarks give a different move-in date, use the MLS fields and flag it.
 - Actual Rent: Rented Price (Monthly), never the list price.

@@ -4,19 +4,17 @@ This folder holds a set of workflows for filling an Aivre URAR (UAD 3.6) apprais
 
 The appraiser is the person you are talking to. "The appraiser" in every file means them.
 
-## 1. Required: full CDP access
+## 1. Browser access
 
-These workflows inject small JavaScript helpers into the Aivre page and attach local files to Aivre's upload inputs. Both need full Chrome DevTools Protocol (CDP) access in Browser Use.
+The appraiser has Chrome connected to Browser Use, with "Enable full CDP access" turned on in ChatGPT's Developer mode settings and Aivre signed in.
 
-Before opening Aivre in a chat, check that you can send raw CDP commands to the connected Chrome tab, specifically `Runtime.evaluate` (with `awaitPromise`) and `DOM.setFileInputFiles`. A quick test is `Runtime.evaluate` of `1+1` on any tab.
+**The one hard requirement is running JavaScript in the page** (`Runtime.evaluate` with `awaitPromise`). The workflows' field helpers depend on it. Test it with `1+1` the first time a task needs the browser. Only if that fails, tell the appraiser that JavaScript access to the page is unavailable, that "Enable full CDP access" must be on and Chrome connected, and stop the browser part of the task.
 
-If you cannot, stop before touching Aivre and tell the appraiser:
+**File uploads are not a requirement to start.** Some ChatGPT browser tools block the CDP command `DOM.setFileInputFiles` even with full CDP access on. That is a limit of the tool, not a setting the appraiser got wrong, so never tell them a setting is off because of it. When a step needs an upload, use the methods under Uploads in `workflows/chatgpt-runtime.md`, which include a JavaScript method that needs only `Runtime.evaluate`.
 
-> Full CDP access is off. In ChatGPT settings, open the Developer mode section and turn on "Enable full CDP access" (it is marked Elevated risk). Make sure Chrome is connected to Browser Use and signed in to Aivre, then start a new chat in this project.
+Check only what the task in front of you needs. Creating a blank report, or filling fields with no exhibits, needs no uploads.
 
-Do not try to fill the report with clicks and typing only. It is too slow and the uploads will fail.
-
-Also needed: Chrome connected to Browser Use, with the appraiser signed in to https://www.aivre.com. If Aivre shows a login or two-factor prompt, stop and ask the appraiser to sign in. Never enter or work around credentials or codes.
+If Aivre shows a login or two-factor prompt, stop and ask the appraiser to sign in. Never enter or work around credentials or codes.
 
 ## 2. Folders
 
@@ -40,6 +38,7 @@ Open `appraiser-profile.md`. If it still has `[fill in]` placeholders, ask the a
 
 | Request | Read |
 |---|---|
+| Create a new report | The Report bullet under "Where things are" in `workflows/aivre-report-fill.md`. Check the dashboard first; if a report for that address already exists, open it instead and tell the appraiser. A new report needs only the address and no workfile. |
 | Fill a report, or one named section of it | `workflows/aivre-report-fill.md` (the core), then the property-type file it tells you to pick |
 | Single-family house (detached, PUD house, fee simple townhouse) | `workflows/aivre-fill-single-family.md` |
 | Condominium or co-op unit | `workflows/aivre-fill-condo.md` |

@@ -78,7 +78,7 @@ window.G = {
 - Comp structure (add a dwelling, outbuilding or unit to one comp) is in the comp's header gear, "Manage structures".
 
 ## 1. TSV import
-1. Sales Comparison Approach page, arrow on "Add Comparable", "Import from CSV/TSV". Attach the TSV by absolute path to the dialog's real file input with DOM.setFileInputFiles.
+1. Sales Comparison Approach page, arrow on "Add Comparable", "Import from CSV/TSV". Attach the TSV to the dialog's real file input (see Uploads in chatgpt-runtime.md).
 2. Appraiser context, for example: "Import all N rows in this order: <addresses>. These are 2-4 unit buildings. LMT column = days on market. Sold Pr = sale price, Closed Date = sale date, Contract Date = contract date, List Price = list price. BR1-BR4 = bedrooms per unit, Full/Half Baths-Unit 1-4 = baths per unit, Flr # - Un = unit floor. FIN = financing type. CONC = sales concession amount. Do not enter any adjustments and do not enter quality or condition ratings."
 3. Analyze CSV/TSV (about 60-90 seconds), then Apply Fields.
 4. Check every imported value against the TSV: prices, dates, days on market, MLS #, per-unit bedrooms and baths. Clear anything typed into an adjustment.
@@ -133,7 +133,7 @@ Subject check: a subject garden unit (first-floor unit partly below grade) must 
 
 ## 5. Comp photos
 - Compress each matched photo to about 1600 px on the long edge and put it in Scratch/<slug>/uploads/<comp address>.jpg.
-- Grid photo cells: in the Property Address row, the file inputs are in children[1] (subject) and children[2..] (comps). Give each comp's input a unique aria-label by script, then attach the photo to that input with DOM.setFileInputFiles.
+- Grid photo cells: in the Property Address row, the file inputs are in children[1] (subject) and children[2..] (comps). Give each comp's input a unique aria-label by script, then attach the photo to that input (see Uploads in chatgpt-runtime.md).
 - Zoom on the photo row afterwards to confirm each photo sits in the right column.
 
 ## 6. Size disclaimer
