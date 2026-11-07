@@ -1,0 +1,5 @@
+# Client files never belong in the repo.
+Workfiles/*
+!Workfiles/README.md
+Scratch/*
+!Scratch/README.md
